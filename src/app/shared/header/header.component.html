@@ -1,0 +1,25 @@
+<div class="header">
+  <a [routerLink]="['/']">
+    <svg-icon class="logo" src="assets/logos/devlinks-logo.svg"> </svg-icon>
+  </a>
+  <ul class="nav">
+    <li routerLinkActive="active" class="nav-item">
+      <a class="nav-item-link" [routerLink]="['/creation']">
+        <svg-icon class="nav-item-icon" src="assets/icons/link.svg"> </svg-icon>
+        <p>Links</p>
+      </a>
+    </li>
+
+    <li routerLinkActive="active" class="nav-item">
+      <a class="nav-item-link" [routerLink]="['/creation']">
+        <svg-icon class="nav-item-icon" src="assets/icons/profile.svg">
+        </svg-icon>
+        <p>Profile Details</p>
+      </a>
+    </li>
+  </ul>
+
+  <button mat-button class="preview-button" aria-label="preview-button">
+    Preview
+  </button>
+</div>

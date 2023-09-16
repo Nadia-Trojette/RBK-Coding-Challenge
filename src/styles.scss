@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* You can add global styles to this file, and also import other style files */
+
+// @import "src/assets/styles/index";
+
+*,
+*::after,
+*::before {
+  font-family: Instrument, "Helvetica Neue", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 100%;
+}
+
+html,
+body {
+  height: 100%;
+}
+body {
+  background-color: #fafafa;
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Instrument, "Helvetica Neue", sans-serif;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
