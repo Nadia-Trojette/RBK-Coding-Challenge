@@ -54,6 +54,23 @@ export class LinksComponent implements OnInit {
     if (index !== -1) {
       this.links.splice(index, 1);
     }
+    const linksString = localStorage.getItem('links');
+
+    if (linksString) {
+      let linksList = JSON.parse(linksString);
+
+      // Check if the index is within the valid range of the list
+      if (index >= 0 && index < linksList.length) {
+        // Use the splice method to remove the item at the specified index
+        linksList.splice(index, 1);
+
+        // Convert the updated list back to a JSON string
+        const updatedListString = JSON.stringify(linksList);
+
+        // Save the updated list back to local storage
+        localStorage.setItem('links', updatedListString);
+      }
+    }
 
     this.sharedDataService.setData({ links: this.links });
   }
