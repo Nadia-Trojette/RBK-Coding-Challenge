@@ -1,1 +1,14 @@
-<p>links works!</p>
+<div class="links-wrapper">
+  <h2 class="title">Customize your links</h2>
+  <p class="subtitle">
+    Add/remove links below and then share all your profiles with the world!
+  </p>
+  <button mat-button class="links-button" (click)="addLink()">
+    + Add new link
+  </button>
+  <div cdkDropList class="link-list" (cdkDropListDropped)="drop($event)">
+    <div *ngFor="let link of links" cdkDrag>
+      <app-link-card [link]="link"></app-link-card>
+    </div>
+  </div>
+</div>

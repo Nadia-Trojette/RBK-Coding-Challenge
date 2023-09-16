@@ -2,14 +2,11 @@
   &-wrapper {
     background-color: #ffffff;
     height: calc(100vh - 9rem);
-    /* display: flex; */
     display: grid;
     justify-content: center;
     justify-items: center;
     align-items: center;
     border-radius: 1rem;
-    // grid-template-rows: repeat(10, 1fr);
-    // grid-template-rows: 2fr 2fr repeat(7, 1fr) 2fr;
   }
 
   &-frame {

@@ -1,0 +1,39 @@
+<div class="modal-header">
+  <div class="header-wrapper">
+    <h1 mat-dialog-title>Add link</h1>
+  </div>
+</div>
+
+<div class="modal-content">
+  <div mat-dialog-content>
+    <form class="link-form" [formGroup]="linkForm">
+      <mat-form-field class="field-full-width" appearance="outline">
+        <mat-label>Platform</mat-label>
+        <mat-select formControlName="linkType">
+          <mat-option *ngFor="let linkType of linkTypes" [value]="linkType">
+            {{ linkType }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field class="field-full-width" appearance="outline">
+        <mat-label>Link</mat-label>
+        <input
+          matInput
+          type="url"
+          placeholder="Enter your link"
+          formControlName="linkName"
+        />
+      </mat-form-field>
+    </form>
+  </div>
+
+  <div mat-dialog-actions class="modal-buttons">
+    <button mat-button class="negative-btn" (click)="onDismiss()">
+      annuler
+    </button>
+    <button mat-button class="positive-btn" (click)="onConfirm()">
+      Confirmer
+    </button>
+  </div>
+</div>
