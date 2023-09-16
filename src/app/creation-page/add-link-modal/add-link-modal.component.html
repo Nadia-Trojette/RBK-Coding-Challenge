@@ -11,7 +11,8 @@
         <mat-label>Platform</mat-label>
         <mat-select formControlName="linkType">
           <mat-option *ngFor="let linkType of linkTypes" [value]="linkType">
-            {{ linkType }}
+            <svg-icon class="link-icon" [src]="linkType.icon"></svg-icon>
+            {{ linkType.value }}
           </mat-option>
         </mat-select>
       </mat-form-field>

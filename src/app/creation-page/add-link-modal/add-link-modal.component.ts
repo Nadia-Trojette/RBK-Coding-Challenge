@@ -11,12 +11,12 @@ export class AddLinkModalComponent implements OnInit {
   linkForm!: FormGroup;
 
   linkTypes = [
-    'Github',
-    'LinkedIn',
-    'Youtube',
-    'Facebook',
-    'Instagram',
-    'Custom',
+    { value: 'Github', icon: 'assets/logos/github.svg' },
+    { value: 'LinkedIn', icon: 'assets/logos/linkedin.svg' },
+    { value: 'Youtube', icon: 'assets/logos/youtube.svg' },
+    { value: 'Facebook', icon: 'assets/logos/facebook.svg' },
+    { value: 'Instagram', icon: 'assets/logos/instagram.svg' },
+    { value: 'Custom', icon: 'assets/icons/link.svg' },
   ];
 
   constructor(
@@ -41,7 +41,8 @@ export class AddLinkModalComponent implements OnInit {
 
   onConfirm(): void {
     const sentData = {
-      platform: this.linkTypeInput?.value,
+      platform: this.linkTypeInput?.value.value,
+      icon: this.linkTypeInput?.value.icon,
       link: this.linkNameInput?.value,
     };
     this.dialogRef.close(sentData);

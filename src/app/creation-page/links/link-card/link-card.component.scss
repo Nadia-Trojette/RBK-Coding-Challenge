@@ -9,8 +9,22 @@
     gap: 1rem;
   }
 
+  &-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
   &-title {
     color: #737373;
+  }
+
+  &-icon {
+    display: flex;
+
+    svg path {
+      fill: #737373;
+    }
   }
 
   &-label {
@@ -23,6 +37,8 @@
     padding: 0.75rem 0.5rem;
     border: 1px #d9d9d9 solid;
     border-radius: 0.5rem;
+    display: flex;
+    gap: 0.5rem;
   }
 
   &-name {

@@ -4,10 +4,22 @@
     <div class="placeholder-image"></div>
     <div class="placeholder-name"></div>
     <div class="placeholder-email"></div>
-    <div class="placeholder-link"></div>
-    <div class="placeholder-link"></div>
-    <div class="placeholder-link"></div>
-    <div class="placeholder-link"></div>
-    <div class="placeholder-link"></div>
+    <div *ngIf="links.length !== 0">
+      <div *ngFor="let link of links | slice : 0 : 5">
+        <a
+          class="link-item"
+          [ngStyle]="{ 'background-color': getColor(link.platform) }"
+          [href]="link.link"
+        >
+          <svg-icon class="link-icon" [src]="link.icon"></svg-icon>
+          <span>{{ link.platform }}</span>
+        </a>
+      </div>
+    </div>
+    <div *ngIf="links.length === 0">
+      <div *ngFor="let link of placeholderLinks">
+        <div class="placeholder-link"></div>
+      </div>
+    </div>
   </div>
 </div>

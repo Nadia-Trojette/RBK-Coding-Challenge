@@ -1,8 +1,12 @@
 <div class="link-card">
-  <h5 class="link-title">Link #1</h5>
+  <span class="link-header">
+    <svg-icon class="link-icon" src="assets/icons/drag.svg"> </svg-icon>
+    <h5 class="link-title">Link #1</h5></span
+  >
   <div class="link-platform">
     <p class="link-label">Platform</p>
     <div class="link-wrapper-name">
+      <svg-icon class="link-icon" [src]="link.icon"></svg-icon>
       <p class="link-name">{{ link.platform }}</p>
     </div>
   </div>

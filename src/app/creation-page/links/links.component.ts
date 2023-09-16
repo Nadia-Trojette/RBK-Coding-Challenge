@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Link } from 'src/app/models/link';
 import { AddLinkModalComponent } from '../add-link-modal/add-link-modal.component';
 import { MatDialog } from '@angular/material/dialog';
+import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
   selector: 'app-links',
@@ -14,7 +15,10 @@ export class LinksComponent implements OnInit {
 
   result: any;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    private sharedDataService: SharedDataService
+  ) {}
 
   ngOnInit(): void {}
 
@@ -34,5 +38,9 @@ export class LinksComponent implements OnInit {
 
       this.links.push(this.result);
     });
+  }
+
+  saveData() {
+    this.sharedDataService.setData({ links: this.links });
   }
 }
