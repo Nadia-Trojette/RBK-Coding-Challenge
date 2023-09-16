@@ -12,6 +12,8 @@ import { CreationPageComponent } from './creation-page/creation-page.component';
 import { PreviewPageComponent } from './preview-page/preview-page.component';
 
 import { MatButtonModule } from '@angular/material/button';
+import { LinksComponent } from './creation-page/links/links.component';
+import { PhoneComponent } from './creation-page/phone/phone.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
     HeaderComponent,
     CreationPageComponent,
     PreviewPageComponent,
+    LinksComponent,
+    PhoneComponent,
   ],
   imports: [
     BrowserModule,
