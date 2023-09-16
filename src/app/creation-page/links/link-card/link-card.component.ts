@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Link } from 'src/app/models/link';
 
 @Component({
@@ -9,7 +9,14 @@ import { Link } from 'src/app/models/link';
 export class LinkCardComponent implements OnInit {
   @Input()
   link!: Link;
+
+  @Output() removeLinkEvent = new EventEmitter<void>();
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  removeLink() {
+    this.removeLinkEvent.emit();
+  }
 }

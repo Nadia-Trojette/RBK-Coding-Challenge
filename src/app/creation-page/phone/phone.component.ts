@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Link } from 'src/app/models/link';
+import { User } from 'src/app/models/user';
 import { SharedDataService } from 'src/app/services/shared-data.service';
 
 @Component({
@@ -9,15 +10,32 @@ import { SharedDataService } from 'src/app/services/shared-data.service';
 })
 export class PhoneComponent implements OnInit {
   links: Link[] = [];
+  user!: User;
   placeholderLinks = ['Github', 'Linkedin', '', 'Faceook', 'Instagram'];
   constructor(private sharedDataService: SharedDataService) {}
 
   ngOnInit(): void {
-    this.sharedDataService.data$.subscribe((data) => {
-      if (data !== null && data.links !== null) {
-        this.links = data.links;
-      }
-    });
+    const userInfoDataString = localStorage.getItem('userInfo');
+    const linksString = localStorage.getItem('links');
+
+    if (userInfoDataString) {
+      const userInfoData = JSON.parse(userInfoDataString);
+      this.user = userInfoData?.userInfo;
+    }
+    if (linksString) {
+      const linksData = JSON.parse(linksString);
+      this.links = linksData?.links;
+    } else {
+      this.sharedDataService.data$.subscribe((data) => {
+        if (data !== null && data.links !== null) {
+          this.links = data.links;
+        }
+        if (data !== null && data.userInfo !== null) {
+          this.user = data.userInfo;
+          console.log(data.userInfo);
+        }
+      });
+    }
   }
 
   getColor(platform: string) {

@@ -1,0 +1,64 @@
+.profile {
+  &-wrapper {
+    background-color: #ffffff;
+    height: calc(100vh - 9rem);
+    border-radius: 1rem;
+    padding: 2.5em 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.title {
+  color: #333333;
+  margin-bottom: 1rem;
+}
+
+.subtitle {
+  color: #737373;
+  font-size: 0.9rem;
+}
+.wrapper {
+  background-color: #fafafa;
+  display: flex;
+  margin: 1rem 0.5rem;
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.photo {
+  &-element {
+    height: 10rem;
+    width: 10rem;
+    border-radius: 2rem;
+  }
+}
+
+.form-field {
+  &-wrapper {
+    display: flex;
+    gap: 2rem;
+    align-items: baseline;
+  }
+  &-label {
+    color: #737373;
+    font-size: 0.9rem;
+  }
+}
+
+.grey-line {
+  border: 1px solid #d9d9d9;
+  margin: 1rem 0;
+}
+
+.save-button {
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1rem 0;
+  border-radius: 0.5rem;
+  background-color: #633cff;
+  color: #ffffff;
+  max-width: 5rem;
+  align-self: self-end;
+}

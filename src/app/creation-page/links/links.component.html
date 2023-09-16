@@ -8,7 +8,10 @@
   </button>
   <div cdkDropList class="link-list" (cdkDropListDropped)="drop($event)">
     <div *ngFor="let link of links" cdkDrag>
-      <app-link-card [link]="link"></app-link-card>
+      <app-link-card
+        [link]="link"
+        (removeLinkEvent)="removeLink(link)"
+      ></app-link-card>
     </div>
   </div>
   <hr class="grey-line" />

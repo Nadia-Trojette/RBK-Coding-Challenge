@@ -42,5 +42,19 @@ export class LinksComponent implements OnInit {
 
   saveData() {
     this.sharedDataService.setData({ links: this.links });
+    const dataString = JSON.stringify({ links: this.links });
+
+    localStorage.setItem('links', dataString);
+  }
+
+  removeLink(itemToDelete: Link) {
+    const index = this.links.indexOf(itemToDelete);
+
+    // Remove the item from the array
+    if (index !== -1) {
+      this.links.splice(index, 1);
+    }
+
+    this.sharedDataService.setData({ links: this.links });
   }
 }

@@ -17,6 +17,7 @@
 
   &-title {
     color: #737373;
+    flex-grow: 1;
   }
 
   &-icon {
@@ -45,4 +46,9 @@
     color: #333333;
     font-size: 0.9rem;
   }
+}
+
+.remove-button {
+  background-color: transparent;
+  border: none;
 }

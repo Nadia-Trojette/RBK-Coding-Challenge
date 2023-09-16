@@ -1,0 +1,79 @@
+<div class="profile-wrapper">
+  <h2 class="title">Profile Details</h2>
+  <p class="subtitle">
+    Add your details to create a personal touch to your profile.
+  </p>
+
+  <div class="wrapper">
+    <p class="subtitle">Profile picture</p>
+    <div>
+      <input
+        class="form-control"
+        *ngIf="!photo"
+        type="file"
+        (change)="addPhoto($event)"
+      />
+      <img *ngIf="photo" [src]="photo" class="photo-element" alt="User Photo" />
+
+      <!-- <button
+        mat-button
+        class="change-pic-button"
+        aria-label="Change picture button"
+        (click)="addPhoto($event)"
+      >
+        <svg-icon class="change-pic-button-icon" src="assets/icons/image.svg">
+        </svg-icon
+        >Add photo
+      </button> -->
+    </div>
+  </div>
+
+  <div class="wrapper">
+    <form class="link-form" [formGroup]="profileForm">
+      <div class="form-field-wrapper">
+        <span class="form-field-label">First name*</span>
+        <mat-form-field class="field-full-width" appearance="outline">
+          <input
+            matInput
+            type="text"
+            placeholder="First name"
+            formControlName="firstName"
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-field-wrapper">
+        <span class="form-field-label">Last name*</span>
+        <mat-form-field class="field-full-width" appearance="outline">
+          <input
+            matInput
+            type="text"
+            placeholder="Last name"
+            formControlName="lastName"
+          />
+        </mat-form-field>
+      </div>
+      <div class="form-field-wrapper">
+        <span class="form-field-label">Email*</span>
+        <mat-form-field class="field-full-width" appearance="outline">
+          <input
+            matInput
+            type="email"
+            placeholder="Email"
+            formControlName="email"
+          />
+        </mat-form-field>
+      </div>
+    </form>
+  </div>
+
+  <hr class="grey-line" />
+
+  <button
+    mat-button
+    class="save-button"
+    aria-label="save-button"
+    (click)="saveData()"
+  >
+    Save
+  </button>
+</div>

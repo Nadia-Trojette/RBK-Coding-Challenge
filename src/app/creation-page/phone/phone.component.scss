@@ -19,6 +19,18 @@
   }
 }
 
+.user {
+  &-name {
+    font-weight: 600;
+    color: #333333;
+  }
+
+  &-email {
+    color: #737373;
+    font-size: 0.8rem;
+  }
+}
+
 .placeholder {
   &-wrapper {
     grid-row: 1/-1;
